@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta name="decorator" content="atl.admin"/>
+    <meta name="admin.active.section" content="admin_plugins_menu/admin-menu-section"/>
+    <title>Jira React Example</title>
+
+    $webResourceManager.requireResourcesForContext("react-example")
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/javascript">
+        window.startReact();
+    </script>
+</body>
+</html>
