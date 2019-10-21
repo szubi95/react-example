@@ -25,7 +25,7 @@
     "webpack-cli": "^3.0.1",
     "webpack-dev-server": "^3.1.4",
     "@atlassian/aui": "^7.10.1",
-    "jquery": "^2.2.4",
+    "jquery": "^3.4.0",
     "prop-types": "^15.7.2",
     "aui-react": "1.2.0"
   },
