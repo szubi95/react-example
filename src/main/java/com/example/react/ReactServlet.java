@@ -22,6 +22,6 @@ public class ReactServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        templateRenderer.render("vm/index.vm", Maps.newHashMap(), resp.getWriter());
+        templateRenderer.render("index.html", Maps.newHashMap(), resp.getWriter());
     }
 }
