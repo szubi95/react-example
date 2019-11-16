@@ -25,10 +25,22 @@
         </dependency>
 
         <dependency>
-            <groupId>com.atlassian.plugin</groupId>
-            <artifactId>atlassian-spring-scanner-annotation</artifactId>
-            <version>${atlassian.spring.scanner.version}</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${springframework.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${springframework.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atlassian.plugins</groupId>
+            <artifactId>atlassian-plugins-osgi-javaconfig</artifactId>
+            <version>${atlassian.osgi.javaconfig.version}</version>
         </dependency>
 
         <dependency>
@@ -44,7 +56,6 @@
             <version>${template.renderer.api.version}</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>
@@ -60,45 +71,6 @@
                     <enableQuickReload>true</enableQuickReload>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>com.atlassian.plugin</groupId>
-                <artifactId>atlassian-spring-scanner-maven-plugin</artifactId>
-                <version>${atlassian.spring.scanner.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>atlassian-spring-scanner</goal>
-                        </goals>
-                        <phase>process-classes</phase>
-                    </execution>
-                </executions>
-            </plugin>
-
-<!--            <plugin>-->
-<!--                <groupId>net.alchim31.maven</groupId>-->
-<!--                <artifactId>yuicompressor-maven-plugin</artifactId>-->
-<!--                <version>${yuicompressor.version}</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>compress</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <nosuffix>true</nosuffix>-->
-<!--                    <jswarn>false</jswarn>-->
-<!--                    <nomunge>true</nomunge>-->
-<!--                    <webappDirectory>${project.build.directory}/min</webappDirectory>-->
-<!--                    <excludes>-->
-<!--                        <exclude>**/*.xml</exclude>-->
-<!--                        <exclude>**/*-min*</exclude>-->
-<!--                        <exclude>**/*.min.*</exclude>-->
-<!--                        <exclude>**/*.pack.js</exclude>-->
-<!--                    </excludes>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -124,7 +96,8 @@
                             <executable>yarn</executable>
                             <arguments>
                                 <argument>run</argument>
-                                <argument>dev-jira</argument>
+<!--                                <argument>development-jira</argument>-->
+                                <argument>production-jira</argument>
                             </arguments>
                         </configuration>
                         <goals>
@@ -141,13 +114,12 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <jira.version>8.5.0</jira.version>
+        <jira.version>8.1.3</jira.version>
         <amps.version>8.0.0</amps.version>
-        <atlassian.spring.scanner.version>2.2.0</atlassian.spring.scanner.version>
+        <springframework.version>5.2.1.RELEASE</springframework.version>
+        <atlassian.osgi.javaconfig.version>0.2.0</atlassian.osgi.javaconfig.version>
         <servlet.api.version>2.4</servlet.api.version>
         <template.renderer.api.version>4.0.0</template.renderer.api.version>
-
-        <yuicompressor.version>1.5.1</yuicompressor.version>
         <exec.version>1.6.0</exec.version>
     </properties>
 </project>

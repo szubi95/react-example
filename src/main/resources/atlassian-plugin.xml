@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
-  <plugin-info>
-    <description>${project.description}</description>
-    <version>${project.version}</version>
-    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
-  </plugin-info>
+<atlassian-plugin name="${project.name}" key="${project.groupId}.${project.artifactId}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+    </plugin-info>
 
-  <resource type="i18n" name="i18n" location="react-example"/>
+    <web-resource name="react-example-web-resources" key="react-example-web-resources">
+        <resource type="download" name="index.pack.js" location="/client/index.pack.js"/>
+        <context>react-example</context>
+    </web-resource>
 
-  <web-resource key="react-example-web-resources" name="react-example-web-resources">
-    <resource type="download" name="index.pack.js" location="/client/index.pack.js"/>
-    <context>react-example</context>
-  </web-resource>
-
-  <servlet name="React Servlet" i18n-name-key="react-servlet.name" key="react-servlet" class="com.example.react.ReactServlet">
-    <url-pattern>/reactservlet</url-pattern>
-  </servlet>
-
+    <servlet name="React Servlet" key="react-servlet" class="com.example.react.ReactServlet">
+        <url-pattern>/reactservlet</url-pattern>
+    </servlet>
 </atlassian-plugin>

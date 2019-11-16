@@ -1,0 +1,7 @@
+.idea
+.idea/**
+
+react-client/node_modules/
+react-client/yarn.lock
+react-example.iml
+target/

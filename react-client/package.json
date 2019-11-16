@@ -5,8 +5,8 @@
   "scripts": {
     "clean": "rm -rf node_modules/ lib/* npm-debug.log",
     "dev-watch": "./node_modules/.bin/webpack --config webpack.config.js --watch",
-    "prod-jira": "./node_modules/.bin/webpack --config webpack.config.js",
-    "dev-jira": "./node_modules/.bin/webpack --config webpack.config.js"
+    "production-jira": "./node_modules/.bin/webpack --config webpack.config.js --mode production",
+    "development-jira": "./node_modules/.bin/webpack --config webpack.config.js --mode development"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
