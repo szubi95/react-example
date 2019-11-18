@@ -9,6 +9,7 @@ module.exports = {
         filename: '[name].pack.js',
     },
     mode: "development",
+
     module: {
         rules: [
             {

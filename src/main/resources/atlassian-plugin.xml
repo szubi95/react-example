@@ -14,4 +14,6 @@
     <servlet name="React Servlet" key="react-servlet" class="com.example.react.ReactServlet">
         <url-pattern>/reactservlet</url-pattern>
     </servlet>
+
+    <rest name="React Rest Resource" key="react-rest-resource" path="/reactrest" version="1.0"/>
 </atlassian-plugin>
