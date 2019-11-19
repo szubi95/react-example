@@ -1,6 +1,5 @@
 package com.example.react.rest;
 
-import com.example.react.aop.Loggable;
 import com.example.react.rest.model.Model;
 
 import javax.ws.rs.Consumes;
@@ -33,19 +32,11 @@ public class Controller {
     @Path("/get")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
-    //@Loggable
     public Response get() {
-        this.cos();
-
         return Response
                 .ok(modelsList.stream()
                         .sorted(Comparator.comparing(Model::getId))
                         .collect(toList()))
                 .build();
-    }
-
-    @Loggable
-    public Object cos() {
-        return new Object();
     }
 }
